@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import AllVideos from "./Components/AllVideos";
-import Home from './Pages/Home';
-import Video from './Components/Video';
+// import AllVideos from "./Components/AllVideos";
+// import Home from './Pages/Home';
+// import Video from './Components/Video';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+// import SearchBar from './Components/Search';
 
 // path = htps://http://localhost:5174 = path po default
 // path "/" => htps://http://localhost:5174/
@@ -19,15 +20,25 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 // <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu stranicuon treba da ocita <AllVideos />
 
+const VIDEOS = [
+    {
+        id: 1,
+        title: "How to learn React",
+        url: "",
+        cover: "",
+    },
+    {
+        id: 2,
+        title: "How to learn css",
+        url: "",
+        cover: "",
+    },
+]
+
 function App() {
     return (
         <>
-            <BrowserRouter >
-                <Routes>
-                    <Route path='/' element={ <Home /> } />
-                    <Route path='/video/:id' element={ <Video /> } />
-                </Routes>
-            </BrowserRouter>
+            
             {/* < AllVideos /> */}
         </>
     )

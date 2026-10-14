@@ -1,0 +1,11 @@
+
+
+Home.js
+    -> SearchBar.js -> import VIDEOS from "./../videos.json"
+    -> AllVideos.js -> import VIDEOS from "./../videos.json"
+
+1. Home.js
+    -> Naapravimo state koji se zove [videos, setVideos]
+        -> inicijalna vrednost import VIDEOS from "./../videos.json"
+
+2. Proslediti videos iz state u AllVideos.js i SearchBar.js

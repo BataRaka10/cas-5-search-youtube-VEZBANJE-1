@@ -1,14 +1,6 @@
 
 // import VIDEOS from "./../videos.json"
-import AllVideos from "../Components/AllVideos";
-
-const Home = () => {
-    return (
-        <>
-            <h1>Glavna stranica</h1>
-            <AllVideos />
-        </>
-    )
-}
-
-export default Home;
+import { useState } from "react";
+// import AllVideos from "../Components/AllVideos";
+// import SearchBar from "../Components/SearchBar";
+// import VIDEOS from "./../videos.json"

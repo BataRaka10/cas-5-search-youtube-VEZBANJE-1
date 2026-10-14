@@ -1,8 +1,70 @@
 
-// import VIDEOS from "./../videos.json"
+import VIDEOS from "./../videos.json"
 
 
 // e => SearchVideo(e) = event koji prosledjujemo u SearchVideo
+// zbog statea = {videos} pod {zagradama}
+const SearchBar = ({videos, onSearchVideo}) => {
+    // console.log(videos)
+    // console.log(videos, onSearchVideo)
+
+    return (
+        <>
+            <form>
+                <label>
+                    Search:
+                    <input type="text" name="search" onInput={ (e) => SearchVideoByName(e.currentTarget.value, videos, onSearchVideo) } />
+                </label>
+            </form>
+        </>
+    )
+}
+
+/**
+ * vezba: kako kucamo tekst da on vec nalai video
+ * How to learn react
+ * How to learn css
+ * 
+ *  How to learn
+ */
+
+// how to learn react -> How To Learn reasct = leva i desna strano to lower case
+// domaci: mala slova normalizacija
+
+// zasto SearchVideoByName = zato sto nam ime funkcije govori sta je -> prosleiti (name) ne event(e)
+const SearchVideoByName = (name, videos, onSearchVideo) => {
+    // console.log("Works")
+    // console.log(name, videos, onSearchVideo)
+
+    let foundVideos = [];
+
+    // videos -<> sa malim slovima
+    videos.forEach( video => {
+
+        // domaci: resenje
+        name = name.toLowerCase()
+        video.title = video.title.toLowerCase()
+
+        // e.currentTarget.value -> ono sto sm o mi ukuccali isto kao === video.title
+        // domaci: toLowerCace
+        if (video.title.includes(name)) {
+            // prosleddjujemo (video)
+            // onSearchVideo([[videos]]);
+            foundVideos.push(video)
+        }
+
+
+
+    })
+
+
+    // let recenica = "Kako si"
+    // let pretraga = "Kak si"
+
+
+}
+
+export default SearchBar;
 
 // const SearchBar = ({videos, onSearchVideo}) => {
     // console.log(videos)

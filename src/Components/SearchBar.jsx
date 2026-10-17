@@ -5,6 +5,21 @@ import VIDEOS from "./../videos.json"
 // e => SearchVideo(e) = event koji prosledjujemo u SearchVideo
 // zbog statea = {videos} pod {zagradama}
 
+const SearchBar = () => {
+
+    
+    return (
+        <>
+            <form>
+                <label>
+                    Search:
+                    <input type="text" name="search" />
+                </label>
+            </form>
+        </>
+    )
+}
+
 
 
 // dobijamo sve video klipove glavne komponente
@@ -19,6 +34,10 @@ import VIDEOS from "./../videos.json"
  * 
  *  How to learn
  */
+
+
+export default SearchBar;
+
 // umesto (e) = (name) -> prihvata name
 
 // zasto SearchVideoByName = zato sto nam ime funkcije govori sta je -> prosleiti (name) ne event(e)

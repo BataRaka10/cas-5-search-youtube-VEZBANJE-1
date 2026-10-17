@@ -1,5 +1,5 @@
 
-// import VIDEOS from "./../videos.json"
+import VIDEOS from "./../videos.json"
 
 
 // e => SearchVideo(e) = event koji prosledjujemo u SearchVideo
@@ -7,13 +7,44 @@
 
 
 
+// dobijamo sve video klipove glavne komponente
+    // kako da vratimo rezultat
+    // console.log(videos, onSearchVideo)
+
+    
 /**
- * vezba: kako kucamo tekst da on vec nalai video
+ * vezba: kako kucamo tekst da on vec  nalapi video
  * How to learn react
  * How to learn css
  * 
  *  How to learn
  */
+// umesto (e) = (name) -> prihvata name
+
+// zasto SearchVideoByName = zato sto nam ime funkcije govori sta je -> prosleiti (name) ne event(e)
+
+
+
+    // console.log(e.currentTarget.value)
+    // console.log(VIDEOS)
+
+    // mora videos !
+        // console.log("video title")
+        // ako je ono sto smo mi ukucali e.currentTarget.value === video.title isto taj title
+        // e.currentTarget.value
+
+        // domaci: normalizacija podataka = to lower case(leva i desna identicne)
+
+        // let recenica = "Kako si"
+        // let pretraga = "Kak"
+
+        // da li "Kako si" sadzi "Ka"
+        // "kako si" je nama video.title ako naslov naseg klipa sadrzi name koji mi trazimo  
+
+        // if (name.toLowerCase() === video.title.toLowerCase()) {
+        //     console.log("Nasli video")
+        // }
+
 
 // how to learn react -> How To Learn reasct = leva i desna strano to lower case
 // domaci: mala slova normalizacija
@@ -47,7 +78,9 @@
     // let pretraga = "Kak si"
 // }
 
-export default SearchBar;
+
+
+
 
 // const SearchBar = ({videos, onSearchVideo}) => {
     // console.log(videos)

@@ -1,12 +1,18 @@
 
 import { useParams } from "react-router-dom";
 
-// import VIDEOS from "./../videos.json"
+import VIDEOS from "./../videos.json"
 
-
-// useParams() = izvlaci parametre iz adresa // broj 22 je parametar
+// useParams() = izvlaci parametre iz adrese // broj 22 je parametar
 // const { id } = hook -> {viticaste zagrade}
 
+
+
+    // proveraarvmo da li id (u nasem slucaju /video.2) iz url postoji u videos.json() 
+
+    // ako je neki id iz video.json isti kao id koji smo mi prosledili ove /video/2 = video.id == id
+
+        // console.log("video found")
 
 // const Video = () => {
 

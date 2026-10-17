@@ -6,7 +6,6 @@ import AllVideos from "./Components/AllVideos"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from "./Pages/Home"
 import Video from "./Components/Video"
-// import Video from './Components/Video';
 // import SearchBar from './Components/SearchBar';
 
 

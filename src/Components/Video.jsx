@@ -6,7 +6,16 @@ import VIDEOS from "./../videos.json"
 // useParams() = izvlaci parametre iz adrese // broj 22 je parametar
 // const { id } = hook -> {viticaste zagrade}
 
+const Video = () => {
 
+    return (
+        <>
+            
+        </>
+    )
+}
+
+export default Video;
 
     // proveraarvmo da li id (u nasem slucaju /video.2) iz url postoji u videos.json() 
 

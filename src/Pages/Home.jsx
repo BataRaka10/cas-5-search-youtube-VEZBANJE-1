@@ -2,15 +2,26 @@
 // import VIDEOS from "./../videos.json"
 import { useState } from "react";
 // import AllVideos from "../Components/AllVideos";
-import VIDEOS from "./../videos.json"
+import AllVideos from "../Components/AllVideos"
+// import VIDEOS from "./../videos.json"
 // import SearchBar from "./Components/SearchBar";
 
 // domaci: - Napravimo state (u Home.jsx) koji se zove [videos, setVideos]
 // -> inicijalna vrednost -> VIDEOS from "./../videos.json"
 // prosledjivanje VIDEOS SearchBaru = <SearchBar videos={ videos }/>
 
+const Home = () => {
 
+    return (
+        <>
+            
+            <h1>Glavna stranica</h1>
+            <AllVideos />
+        </>
+    )
+}
 
+export default Home;
 
 // prikaz svih video klipova
     

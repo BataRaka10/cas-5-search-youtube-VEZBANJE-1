@@ -30,8 +30,8 @@ const App = () => {
         <>  
             <BrowserRouter>
                 <Routes>
-                    <Route path='/' element={ <AllVideos /> } />
-
+                    <Route path='/' element={ <Home /> } />
+                    <Route path='/video/:id' element={ <Video />} />
                 </Routes>
             </BrowserRouter>
             {/* <BrowserRouter>

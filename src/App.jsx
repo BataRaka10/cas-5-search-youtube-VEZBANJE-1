@@ -12,7 +12,6 @@ import SearchBar from './Components/SearchBar';
 // import SearchBar from './Components/SearchBar';
 
 
-
 // path = htps://http://localhost:5174 = path po default
 // path "/" => htps://http://localhost:5174/
 // path "about" = htps://http://localhost:5174/about
@@ -27,32 +26,23 @@ import SearchBar from './Components/SearchBar';
 
 // <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu stranicuon treba da ocita <AllVideos />
 
-const VIDEOS = [
-    {
-        id: 1,
-        title: "How to learn React",
-        url: "https://www.youtube.com/watch?v=SqcY0GlETPk&t=163s",
-        cover: "https://i.ytimg.com/vi/SqcY0GlETPk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBvF7R7tYEZqgAYn6fM5A_QgI1e-",
-    },
-    {
-        id: 2,
-        title: "How to learn css",
-        url: "https://www.youtube.com/watch?v=tfzGsCxutWk",
-        cover: "https://i.ytimg.com/vi/tfzGsCxutWk/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCnsXU4B5l-aDNE9GBNxyTuDbQVEA",
-    },
-]
 
 const App = () => {
     return (
-        <>
-            { VIDEOS }
+        <>  
+            <BrowserRouter>
+                <Routes>
+                    <Route path='/' element={ <AllVideos /> } />
+
+                </Routes>
+            </BrowserRouter>
             {/* <BrowserRouter>
                 <Routes>
                     <Route path='/' element={ <Home /> } />
                     <Route path='/video/:id' element={ <Video /> } />
                 </Routes>
             </BrowserRouter> */}
-
+            <AllVideos />
             {/* <AllVideos /> */}
         </>
     )

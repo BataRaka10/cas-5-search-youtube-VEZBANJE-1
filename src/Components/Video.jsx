@@ -7,25 +7,8 @@ import VIDEOS from "./../videos.json"
 // const { id } = hook -> {viticaste zagrade}
 const Video = () => {
     
-    const { id } = useParams()
-    console.log(id)
 
-    let videoFound = null;
 
-    VIDEOS.forEach( video => {
-        
-        if (video.id == id) {
-            // console.log("video found")
-            videoFound = video
-        }
-
-    })
-
-    console.log(videoFound)
-
-    if (videoFound === null) {
-        return <h1>This video does not exist</h1>
-    }
 
     // proveraarvmo da li id (u nasem slucaju /video.2) iz url postoji u videos.json() 
 
@@ -40,8 +23,7 @@ const Video = () => {
     
     return (
         <>
-            <h3>{ videoFound.title }</h3>
-            <p>{ videoFound.url }</p>
+
 
         </>
     )

@@ -12,6 +12,7 @@ import VIDEOS from "./../videos.json"
 
 const Home = () => {
     // domaci: uraditi state
+    
     const [videos, setVideos] =useState(VIDEOS)
     // const [videos, setVideos] = useState(VIDEOS); // default na vrednost /  prikaz svih video klipova
     // console.log(videos)

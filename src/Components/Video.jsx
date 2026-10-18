@@ -10,6 +10,7 @@ const Video = () => {
 
 
 
+
     // proveraarvmo da li id (u nasem slucaju /video.2) iz url postoji u videos.json() 
 
         // ako je neki id iz video.json isti kao id koji smo mi prosledili ove /video/2 = video.id == id
@@ -23,7 +24,6 @@ const Video = () => {
     
     return (
         <>
-
 
         </>
     )

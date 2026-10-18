@@ -6,15 +6,14 @@ import VIDEOS from "./../videos.json"
 // zbog statea = {videos} pod {zagradama}
 //                 videos iz SearchBar -> 
 // prosledili {videos, onSearchVideo}
-const SearchBar = ({videos, onSearchVideo}) => {
-    // console.log(videos, onSearchVideo)
+const SearchBar = () => {
 
     return (
         <>
             <form>
                 <label>
                     Search:
-                    <input type="text" name="search" onInput={ (e) => SearchVideoByName(e.currentTarget.value, videos, onSearchVideo) } />
+                    <input type="text" name="search" />
                 </label>
             </form>
         </>
@@ -30,27 +29,9 @@ const SearchBar = ({videos, onSearchVideo}) => {
  */
 
 // (e) da se promeni u (name) -> da prihvata name
-const SearchVideoByName = (name, videos, onSearchVideo) => {
 
-    let foundVideos = [];
 
-    // console.log(name)
-    // console.log(e.currentTarget.value)
 
-    videos.forEach( video => {
-
-        name = name.toLowerCase()
-        video.title = video.title.toLowerCase();
-
-        if (video.title.includes(name)) {
-            // console.log("pronasli smo video " + video.title)
-            foundVideos.push(video)
-        }
-
-    })
-
-    onSearchVideo
-}
 
 export default SearchBar;
 

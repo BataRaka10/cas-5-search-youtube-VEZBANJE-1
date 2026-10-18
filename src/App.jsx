@@ -25,8 +25,6 @@ import SearchBar from './Components/SearchBar';
 // <Route path="/" element={<AllVideos />}/> -> svaki Route jeste jedna putanja
 
 // <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu stranicuon treba da ocita <AllVideos />
-
-
 const App = () => {
     return (
         <>  
@@ -42,7 +40,7 @@ const App = () => {
                     <Route path='/video/:id' element={ <Video /> } />
                 </Routes>
             </BrowserRouter> */}
-            <AllVideos />
+
             {/* <AllVideos /> */}
         </>
     )

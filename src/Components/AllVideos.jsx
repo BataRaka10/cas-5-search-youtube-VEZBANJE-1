@@ -4,15 +4,16 @@
 import VIDEOS from "./../videos.json"
 
 
-// ocekuje array sa objektima - ocekuje json
 const GetAllVideos = () => {
     return (
         <>
             { VIDEOS.map( video => {
-                return <a href={ video.url } target='_blank'>
-                    <img src={ video.cover } alt="" />
-                    <h2>{ video.title }</h2>
-                </a>
+                return (
+                    <a href={ video.url } target='_blank' >
+                        <img src={ video.cover } alt="" />
+                        <h3>{ video.title }</h3>
+                    </a>
+                )
             }) }
         </>
     )
@@ -20,6 +21,23 @@ const GetAllVideos = () => {
 
 export default GetAllVideos;
 
+// ocekuje array sa objektima - ocekuje json
+// const GetAllVideos = ({videos}) => {
+//     return (
+//         <>
+//             { videos.map( video => {
+//                 return (
+//                     <a href={ video.url } target='_blank'>
+//                         <img src={ video.cover } alt="" />
+//                         <h2>{ video.title }</h2>
+//                     </a>
+//                 )
+//             }) }
+//         </>
+//     )
+// }
+
+// export default GetAllVideos;
 
 // const VIDEOS = [
 //     {

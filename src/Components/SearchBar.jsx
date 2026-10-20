@@ -6,14 +6,19 @@ import VIDEOS from "./../videos.json"
 // zbog statea = {videos} pod {zagradama}
 //                 videos iz SearchBar -> 
 // prosledili {videos, onSearchVideo}
-const SearchBar = () => {
+// onSearchVideo - > je funkcija
+// dobijamom sve video klipove ({videos}) iz glavne komponente
+// moramo da vratimo nazad neki rezultat -> vratimo se u Home.jsx
+const SearchBar = ({videos, onSearchVideo}) => {
+    // console.log(videos)
+    console.log(videos, onSearchVideo)
 
     return (
         <>
             <form>
                 <label>
                     Search:
-                    <input type="text" name="search" />
+                    <input type="text" name="search" onInput={ (e) => SearchVideoByName(e.currentTarget.value, videos, onSearchVideo)} />
                 </label>
             </form>
         </>
@@ -28,10 +33,81 @@ const SearchBar = () => {
  *  How to learn -> da odradi tu kvazi prepreku
  */
 
+// (e) -> event
+// funkcija za pretragu - > filtriranje video kliopva
 // (e) da se promeni u (name) -> da prihvata name
+// SearchVideoByName -> treba da se prosledi (name)
+// ---- onSearchVideo menja vrednost naseg filteredVideos(state)
+const SearchVideoByName = (name, videos, onSearchVideo) => {
+    // console.log(name, videos, onSearchVideo)
+    // console.log(e.currentTarget.value)
+    // console.log(VIDEOS)
+
+    let foundVideos = [];
+
+    // po title / VIDEOS
+    videos.forEach( video => {
+
+        name = name.toLowerCase()
+        video.title = video.title.toLowerCase()
+
+        // console.log(video.title)
+        // e.currentTarget.value -> ono sto sm o mi ukuccali isto kao === video.title
+        // if (name === video.title) {
+        //     console.log("video found")
+        // }
+
+        // let recenica = "Kako si"
+        // let pretraga = "Kako si"
+        // da li "kako si" (recenica) sadrzi(includes) pretraga("Ka")
+        if (video.title.includes(name)) {
+            // console.log("Radi")
+            // console.log("Pronasli smo " + video.title)
+             // NE MOZEMO PETLJU NAD 1 OBJEKTOM
+            // onSearchVideo([video])
+            foundVideos.push(video)
+        }
+        // if (video.title.includes(name)) {
+        //     console.log("nasli smo video " + video.title)
+        // }
+    })
+
+    onSearchVideo(foundVideos)
+}
 
 
+// const SearchVideoByName = (name, videos, onSearchVideo) => {
+    // console.log(e.currentTarget.value)
+    // console.log(VIDEOS)
 
+    // let foundVideos = []
+
+    // trazicemo po title
+    // VIDEOS 
+    // videos.forEach( video => {
+
+        // name = name.toLowerCase();
+        // video.title = video.title.toLowerCase();
+
+        // let recenica = "Kako si"
+        // let pretraga = "Kak"
+
+        // ako naslov naseg klipa(video.title) sadrzi(includes) koji mi trtazimo(name)
+        // if (video.title.includes(name)) {
+            // console.log("nasli smo video" + video.title)
+            // onSearchVideo([video])
+            // foundVideos.push(video)
+        // }
+
+        // console.log(video.title)
+        // e.currentTarget.value - bilo pre
+        // if (name === video.title) {
+        //     console.log("Nasli smo video")
+        // }
+    // })
+
+    // onSearchVideo(foundVideos)
+// }
 
 export default SearchBar;
 

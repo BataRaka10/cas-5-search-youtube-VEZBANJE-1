@@ -2,13 +2,15 @@ import { useState } from 'react'
 
 // import AllVideos from "./Components/AllVideos"
 import AllVideos from "./Components/AllVideos"
-// import AllVideos from "./Components/AllVideos"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Home from "./Pages/Home"
-import Home from './Pages/Home';
+import Home from "./Pages/Home"
+// import Home from './Pages/Home';
+import Video from"./Components/Video"
 // import Video from "./Components/Video"
-import Video from './Components/Video';
-import SearchBar from './Components/SearchBar';
+// import Video from './Components/Video';
+
+// import SearchBar from './Components/SearchBar';
 // import SearchBar from './Components/SearchBar';
 
 
@@ -25,22 +27,22 @@ import SearchBar from './Components/SearchBar';
 // <Route path="/" element={<AllVideos />}/> -> svaki Route jeste jedna putanja
 
 // <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu stranicuon treba da ocita <AllVideos />
+
 const App = () => {
     return (
         <>  
             <BrowserRouter>
                 <Routes>
                     <Route path='/' element={ <Home /> } />
-                    <Route path='/video/:id' element={ <Video />} />
+                    <Route path='/video/:id' element={ <Video /> } />
                 </Routes>
             </BrowserRouter>
             {/* <BrowserRouter>
                 <Routes>
                     <Route path='/' element={ <Home /> } />
-                    <Route path='/video/:id' element={ <Video /> } />
+                    <Route path='/video/:id' element={ <Video />} />
                 </Routes>
             </BrowserRouter> */}
-
             {/* <AllVideos /> */}
         </>
     )

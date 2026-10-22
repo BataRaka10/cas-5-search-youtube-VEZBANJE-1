@@ -4,11 +4,9 @@ import { useState } from 'react'
 import AllVideos from "./Components/AllVideos"
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import Home from "./Pages/Home"
-import Home from "./Pages/Home"
+import Home from ".//Pages/Home"
 // import Home from './Pages/Home';
-import Video from"./Components/Video"
-// import Video from "./Components/Video"
-// import Video from './Components/Video';
+import Video from "./Components/Video"
 
 // import SearchBar from './Components/SearchBar';
 // import SearchBar from './Components/SearchBar';
@@ -26,17 +24,28 @@ import Video from"./Components/Video"
 // <Routes> -> lista putanja sa naseg sajta
 // <Route path="/" element={<AllVideos />}/> -> svaki Route jeste jedna putanja
 
-// <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu stranicuon treba da ocita <AllVideos />
+// <Route path="/" element={<AllVideos />}/> = kada se dodeje na glavnu 
+// stranicuon treba da ocita <AllVideos />
+
+const VIDEOS = [
+    {
+        id: 1,
+        title: "How to learn React",
+        url: "",
+        cover: "",
+    },
+    {
+        id: 2,
+        title: "How to learn css",
+        url: "",
+        cover: "",
+    },
+];
 
 const App = () => {
     return (
         <>  
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={ <Home /> } />
-                    <Route path='/video/:id' element={ <Video /> } />
-                </Routes>
-            </BrowserRouter>
+            
             {/* <BrowserRouter>
                 <Routes>
                     <Route path='/' element={ <Home /> } />

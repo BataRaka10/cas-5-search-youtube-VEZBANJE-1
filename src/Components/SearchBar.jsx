@@ -9,21 +9,21 @@ import VIDEOS from "./../videos.json"
 // onSearchVideo - > je funkcija
 // dobijamom sve video klipove ({videos}) iz glavne komponente
 // moramo da vratimo nazad neki rezultat -> vratimo se u Home.jsx
-const SearchBar = ({videos, onSearchVideo}) => {
-    // console.log(videos)
-    console.log(videos, onSearchVideo)
+const SearchBar = () => {
 
     return (
         <>
             <form>
                 <label>
                     Search:
-                    <input type="text" name="search" onInput={ (e) => SearchVideoByName(e.currentTarget.value, videos, onSearchVideo)} />
+                    <input type="text" />
                 </label>
             </form>
         </>
     )
 }
+
+// console.log(videos, onSearchVideo)
 
 /**
  * vezba: kako kucamo tekst da on vec nalapi video
@@ -38,42 +38,50 @@ const SearchBar = ({videos, onSearchVideo}) => {
 // (e) da se promeni u (name) -> da prihvata name
 // SearchVideoByName -> treba da se prosledi (name)
 // ---- onSearchVideo menja vrednost naseg filteredVideos(state)
-const SearchVideoByName = (name, videos, onSearchVideo) => {
+
+
+
+export default SearchBar;
+
+// const SearchVideoByName = (name, videos, onSearchVideo) => {
     // console.log(name, videos, onSearchVideo)
     // console.log(e.currentTarget.value)
     // console.log(VIDEOS)
 
-    let foundVideos = [];
+    // let foundVideos  = []
 
-    // po title / VIDEOS
-    videos.forEach( video => {
+    // trazimo po title // VIDEOS bio
+    // videos.forEach( video => {
 
-        name = name.toLowerCase()
-        video.title = video.title.toLowerCase()
+        // name = name.toLowerCase();
+        // video.title = video.title.toLowerCase();
 
         // console.log(video.title)
-        // e.currentTarget.value -> ono sto sm o mi ukuccali isto kao === video.title
-        // if (name === video.title) {
-        //     console.log("video found")
-        // }
+        // e.currentTarget(ONO STO SM O MI UKUCLI) ===(isto) kao video.title 
+        // "Kakoj si" -> video.title
+        // ako naslov naseg klipa sadazi (name) koji mi trazimo
+        // normalizacija podataka
 
-        // let recenica = "Kako si"
-        // let pretraga = "Kako si"
-        // da li "kako si" (recenica) sadrzi(includes) pretraga("Ka")
-        if (video.title.includes(name)) {
-            // console.log("Radi")
-            // console.log("Pronasli smo " + video.title)
-             // NE MOZEMO PETLJU NAD 1 OBJEKTOM
-            // onSearchVideo([video])
-            foundVideos.push(video)
-        }
+        // onSearchVideo FUNKCIJA U SUSTINI MENJ VREDNOST NASEG filteredVideos statea
         // if (video.title.includes(name)) {
-        //     console.log("nasli smo video " + video.title)
-        // }
-    })
+            // console.log("Pronasli sm video" + video.title)
 
-    onSearchVideo(foundVideos)
-}
+            // pretrazujemno json sa video klipovima => NASLI SMO GA onSearchVideo(video) njemu PROSLEDJUJE
+            // onSearchVideo(video);
+            
+            // problem u AllVideos ocekuje array sa objektima(json) -> a mi samo vracamo samo objekat -> onSearchVideo(video)
+            // onSearchVideo([video])
+
+            // foundVideos.push(video)
+        // }
+        // if (name === video.title) {
+        //     console.log("Nasli smo video ")
+        // }
+
+    // })
+
+    // onSearchVideo(foundVideos)
+// }
 
 
 // const SearchVideoByName = (name, videos, onSearchVideo) => {
@@ -109,7 +117,7 @@ const SearchVideoByName = (name, videos, onSearchVideo) => {
     // onSearchVideo(foundVideos)
 // }
 
-export default SearchBar;
+
 
 // const SearchBar = ({videos, onSearchVideo}) => {
     

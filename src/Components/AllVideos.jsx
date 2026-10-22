@@ -4,17 +4,16 @@
 import VIDEOS from "./../videos.json"
 
 
+// ocekuje array sa objektima - ocekuje json
+// 6. cas
+// dodaje se u etAllVideos = ({videos}) => {}
+
+// -- primer -> key={video.id} !!!
 const GetAllVideos = () => {
+
     return (
         <>
-            { VIDEOS.map( video => {
-                return (
-                    <a href={ video.url } target='_blank' >
-                        <img src={ video.cover } alt="" />
-                        <h3>{ video.title }</h3>
-                    </a>
-                )
-            }) }
+            
         </>
     )
 }

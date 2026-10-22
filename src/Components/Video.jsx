@@ -8,22 +8,18 @@ import AllVideos from "./AllVideos";
 // const { id } = hook
 const Video = () => {
 
-    const { id } = useParams()
-    console.log(id)
 
-    let videoFound = null
+    return (
+        <>
 
+            
+        </>
+    )
+}
     // if (video.id == id) ako je id od nekog videa iz video.json isti kao id koji smo prosledili ovde /video/1
     // forEach petlja koja prolazi preko svih video klipova iz video.json
-    VIDEOS.forEach( video => {
 
-        if (video.id == id) {
-            console.log("nasli smo")
-            // postavljamo vrednost da nam bude ista kao video = videoFound = video;
-            videoFound = video
-        }
 
-    })
 
     // if (video.id == id) ako je id od nekog videa iz video.json isti kao id koji smo prosledili ovde /video/1
     // forEach petlja koja prolazi preko svih video klipova iz video.json
@@ -33,22 +29,9 @@ const Video = () => {
 
 
     // console.log(foundVideos)
-    console.log(videoFound)
-
-    if (videoFound === null) {
-        return <h1>this video does not exist</h1>
-    }
-
-    return (
-        <>
-            <h3>{ videoFound.title }</h3>
-            <p>{ videoFound.url }</p>
-            <iframe src={ videoFound.url } ></iframe>
-        </>
-    )
-}
 
 export default Video;
+
 
 // useParams() = izvlaci parametre iz adrese // broj 22 je parametar
 // const { id } = hook -> {viticaste zagrade}

@@ -1,6 +1,6 @@
 
 // import VIDEOS from "./../videos.json"
-import { useState } from "react";
+import { use, useState } from "react";
 import AllVideos from "../Components/AllVideos";
 import SearchBar from "../Components/SearchBar";
 import VIDEOS from "./../videos.json"
@@ -12,14 +12,25 @@ import VIDEOS from "./../videos.json"
 
 const Home = () => {
     // domaci: uraditi state
+
+    // TO JE PRIKAZ SVIH VIDFEO KLIPVAdefault na vrednost
+
+
+    // Ovi je deo koji se menja  //  uloga filteredVideos - jeste da bude taj state koji cemo mi menjati -> VIDEOS -> ostasje nam isti set video klipova koje mi imamo -> filteredVideos -> je ono sto smo mi isfiltrirali tacnije -> ak okorisnik ukuca how to learn reacct -> mi cemo naci taj klip i STAVITI GA U filteredVideos
+    
     // prikaz svih video klipova 
-    // console.log(videos)
     // default na vrednost /  prikaz svih video klipova
 
     // / Ovo je deo koji se menja
+
     // uloga filteredVideos - jeste da bude taj state koji cem omi menjati (VIDEOS) nam ostaje isti / ako korisnik ukuca how to learn react -> onda ce mo mi naci taj klip i staviti ga filteredVideos
     
-    // callback funkcija
+    // callback funkcija -> prosledjujemo kod kao funkciju a nazad dobijam odgovor
+    // moost izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcijekoju prosledimo
+
+
+
+
     // most izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcije
     // callback funkcija -> prosledjujemo kod kao funkciju a nazad dobijam odgovor
     // miost izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcije
@@ -31,22 +42,19 @@ const Home = () => {
 
     // const [filteredVideos, setFilteredVideos] = useState(VIDEOS); // Ovo je deo koji se menja
 
-    
-    
-
-
     // logika = u SearchBaru cemo pozvati handleSearchVideo -proslediti mu neki rezultat sa video klipovima i on ce promeniti video state
     // const handleSearchVideo = (results) => {
     //     setFilteredVideos(results)
     // } 
 
-    // console.log(filteredVideos)
-
+    
     // prosledjivanje videos u SearchBar
-    // AllVideos -> DOBIJSA samo isfiltrirale video klipove = videos={ filteredVideos }
+    // AllVideos -> DOBIJSA SAMO isfiltrirale video klipove = videos={ filteredVideos }
+    // KLJUC (videos) !!!
     return (
         <>
-            <h1>Glavna stanica</h1>
+            <h1></h1>
+            {/* <SearchBar /> */}
             <AllVideos />
             {/* <SearchBar videos={ videos } onSearchVideo={handleSearchVideo} /> */}
             {/* <AllVideos videos={ filteredVideos }/> */}

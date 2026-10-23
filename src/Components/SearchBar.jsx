@@ -7,22 +7,24 @@ import VIDEOS from "./../videos.json"
 //                 videos iz SearchBar -> 
 // prosledili {videos, onSearchVideo}
 // onSearchVideo - > je funkcija
-// dobijamom sve video klipove ({videos}) iz glavne komponente
+// dobijamo SVE VIDEO KLIPVE  ({videos}) iz glavne komponente
 // moramo da vratimo nazad neki rezultat -> vratimo se u Home.jsx
-const SearchBar = () => {
+
+const SearchBar = ({videos, onSearchVideo}) => {
+    // console.log(videos)
+    console.log(videos, onSearchVideo)
 
     return (
         <>
             <form>
                 <label>
                     Search:
-                    <input type="text" />
+                    <input type="text" name="search" onInput={ (e) => SearchVideoByName(e.currentTarget.value, videos, onSearchVideo )} />
                 </label>
             </form>
         </>
     )
 }
-
 // console.log(videos, onSearchVideo)
 
 /**
@@ -36,10 +38,46 @@ const SearchBar = () => {
 // (e) -> event
 // funkcija za pretragu - > filtriranje video kliopva
 // (e) da se promeni u (name) -> da prihvata name
-// SearchVideoByName -> treba da se prosledi (name)
+// SearchVideoByName -> treba da se prosledi (name) / SearchVideoByName -> funkcija
+
 // ---- onSearchVideo menja vrednost naseg filteredVideos(state)
 
+const SearchVideoByName = (name, videos, onSearchVideo) => {
+    console.log(name, videos, onSearchVideo)
+    // console.log(e.currentTarget.value)
+    // console.log(VIDEOS)
 
+    // trazi cemo po title  // VIDEOS
+    videos.forEach( video => {
+
+        name = name.toLowerCase()
+        video.title = video.title.toLowerCase()
+
+        // let recenica = "Kako si"
+        // let pretraga = "Kak"
+
+        // da li "kako si" sadrzi (includes) "kako si"
+        // video.title je "kako si"
+        // if ("Kako si".includes("kako si")) {
+        //     console.log("radi!")
+        // }
+        // e.currentTarget.value(ONO STO SM O MI UKUCLI) ===(isto) kao video.title 
+        // e.currentTarget.value -> je sad name
+        // if (name.toLowerCase() === video.title.toLowerCase()) {
+        //     console.log("Nasli smo ")
+        // }
+        if (video.title.includes(name)) {
+            // console.log(video.title)
+
+            onSearchVideo(video); // ako nadje dva klipa on prosledi jedan
+
+            
+
+        }
+        // console.log(video.title)
+    });
+
+};
 
 export default SearchBar;
 

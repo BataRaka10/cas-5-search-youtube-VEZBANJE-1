@@ -8,11 +8,52 @@ import AllVideos from "./AllVideos";
 // const { id } = hook
 const Video = () => {
 
+    // napravimo varijablu id - i iz njega izvuci parametre (useParams)
+    // const { id } = useParams()
+    // console.log(id)
+    const { id } = useParams()
+    console.log(id)
+
+    // zasto videoFound = null -> zato sto ako ne uspemo da nadjemo u VIDEOS.forEach petlji koji ima u tom video nece se promeniti sa null
+
+    let videoFound = null;
+
+    // if (video.id == id) ako je id od nekog videa iz video.json isti kao id koji smo prosledili ovde /video/1
+    // forEach petlja koja prolazi preko svih video klipova iz video.json
+    VIDEOS.forEach( video => {
+
+        if (video.id == id) {
+            // console.log("video found")
+
+            // ako uspe da nadje video sa id: 1: on ce uzeti ceo podatak { "id", "title", "url", "cover" } -> videos.json
+            videoFound = video
+        }
+    })
+
+    console.log(videoFound)
+
+    
+
+    // if (video.id == id) ako je id od nekog videa iz video.json isti kao id koji smo prosledili ovde /video/1
+        // forEach petlja koja prolazi preko svih video klipova iz video.json
+
+        // console.log("Video found")
+            
+            // ako uspe da nadje video sa id: 1: on ce uzeti ceo podatak { "id", "title", "url", "cover" } -> videos.json
+
+
+    // console.log(videoFound)
+
+    if (videoFound === null) {
+        return <h1>This video does not exist</h1>
+    }
 
     return (
         <>
-
-            
+            <h3>{ videoFound.title }</h3>
+            <p>{ videoFound.url }</p>
+            <iframe src={ videoFound.url } ></iframe>
+            {/* <AllVideos /> */}
         </>
     )
 }

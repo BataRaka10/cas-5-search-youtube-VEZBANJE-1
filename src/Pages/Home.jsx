@@ -13,27 +13,28 @@ import VIDEOS from "./../videos.json"
 const Home = () => {
     // domaci: uraditi state
 
-    // TO JE PRIKAZ SVIH VIDFEO KLIPVAdefault na vrednost
+    // TO JE PRIKAZ SVIH VIDFEO KLIPVA default na vrednost
 
+    // Ovo je deo koji se menja
+
+    // console.log(videos)
 
     // Ovi je deo koji se menja  //  uloga filteredVideos - jeste da bude taj state koji cemo mi menjati -> VIDEOS -> ostasje nam isti set video klipova koje mi imamo -> filteredVideos -> je ono sto smo mi isfiltrirali tacnije -> ak okorisnik ukuca how to learn reacct -> mi cemo naci taj klip i STAVITI GA U filteredVideos
     
     // prikaz svih video klipova 
     // default na vrednost /  prikaz svih video klipova
 
-    // / Ovo je deo koji se menja
+    
 
     // uloga filteredVideos - jeste da bude taj state koji cem omi menjati (VIDEOS) nam ostaje isti / ako korisnik ukuca how to learn react -> onda ce mo mi naci taj klip i staviti ga filteredVideos
     
-    // callback funkcija -> prosledjujemo kod kao funkciju a nazad dobijam odgovor
+    // callback funkcija -> prosledjujemo KOD kao funkciju a nazad dobijam odgovor
     // moost izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcijekoju prosledimo
-
-
-
+    
 
     // most izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcije
-    // callback funkcija -> prosledjujemo kod kao funkciju a nazad dobijam odgovor
-    // miost izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcije
+
+    // most izmedju SearchBar i naseg state / ne moszemo direktno / ali moze preko callback funkcije
 
 
     // const [videos, setVideos] = useState(VIDEOS); // default na vrednost /  prikaz svih video klipova
@@ -47,14 +48,14 @@ const Home = () => {
     //     setFilteredVideos(results)
     // } 
 
+    // console.log(filteredVideos)
     
     // prosledjivanje videos u SearchBar
     // AllVideos -> DOBIJSA SAMO isfiltrirale video klipove = videos={ filteredVideos }
     // KLJUC (videos) !!!
     return (
         <>
-            <h1></h1>
-            {/* <SearchBar /> */}
+            <SearchBar />
             <AllVideos />
             {/* <SearchBar videos={ videos } onSearchVideo={handleSearchVideo} /> */}
             {/* <AllVideos videos={ filteredVideos }/> */}
